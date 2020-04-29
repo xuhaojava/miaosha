@@ -1,0 +1,8 @@
+linux：Redis+RabbitMQ+mysql+项目war包
+项目描述：springboot搭建后台，mybatis做交互，mysql作为数据库
+机器限制只能一台linux作为服务器，windows上搭载redis的从服务器
+redis读写分离主从复制
+项目本身是在高并发情况下实现秒杀功能的，对秒杀对象，商品秒杀页进行了缓存。
+虽然项目本身不会产生分布式session问题，但项目内使用redis+cookie解决了分布式session问题
+rabbitmq异步消费，可以达到削峰的目的，但一般rabbitmq需要做集群，由于机器原因只用了一个rabbitmq
+秒杀接口进行了隐藏，加入了图形验证码
